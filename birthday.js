@@ -31,6 +31,8 @@ function getSign() {
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
         return "Sagittarius";
     }
+
+    document.getElementById('result').textContent = getSign;
 }
 
 
@@ -70,3 +72,8 @@ function birthdayCountDown(happybirthday) {
 
 
 }
+
+
+var button = document.getElementById('buttonclick');
+
+button.addEventListener('click', getSign);
