@@ -1,4 +1,5 @@
 //------------Zodiac Sign Function--------//
+var button = document.getElementById('buttonclick');
 
 
 function getSign() {
@@ -34,6 +35,7 @@ function getSign() {
 
     document.getElementById('result').textContent = getSign;
 }
+button.addEventListener('click', getSign);
 
 
 //------------return age Function--------//
@@ -72,8 +74,3 @@ function birthdayCountDown(happybirthday) {
 
 
 }
-
-
-var button = document.getElementById('buttonclick');
-
-button.addEventListener('click', getSign);
