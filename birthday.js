@@ -1,9 +1,8 @@
 //------------Zodiac Sign Function--------//
-var button = document.getElementById('buttonclick');
+var button = document.getElementById('displaySign');
 
-
-function getSign() {
-    var birth = new Date(this.bday);
+function getSign(bday) {
+    var birth = new Date(bday);
     var month = birth.getMonth() + 1;
     var day = birth.getDay();
 
@@ -32,10 +31,39 @@ function getSign() {
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
         return "Sagittarius";
     }
-
-    document.getElementById('result').textContent = getSign;
 }
-button.addEventListener('click', getSign);
+
+function displayGetSign() {
+    var input = document.getElementById('inputNum').value;
+    var result = getSign(input);
+    if (result == "Capricorn") {
+        document.getElementById('prime').textContent = "Capricorn";
+    } else if (result == "Aquarius") {
+        document.getElementById('prime').textContent = "Aquarius";
+    } else if (result == "Pisces") {
+        document.getElementById('prime').textContent = "Pisces";
+    } else if (result == "Aries") {
+        document.getElementById('prime').textContent = "Aries";
+    } else if (result == "Taurus") {
+        document.getElementById('prime').textContent = "Taurus";
+    } else if (result == "Gemini") {
+        document.getElementById('prime').textContent = "Gemini";
+    } else if (result == "Cancer") {
+        document.getElementById('prime').textContent = "Cancer";
+    } else if (result == "Leo") {
+        document.getElementById('prime').textContent = "Leo";
+    } else if (result == "Virgo") {
+        document.getElementById('prime').textContent = "Virgo";
+    } else if (result == "Libra") {
+        document.getElementById('prime').textContent = "Libra";
+    } else if (result == "Scorpio") {
+        document.getElementById('prime').textContent = "Scorpio";
+    } else if (result == "Sagittarius") {
+        document.getElementById('prime').textContent = "Sagittarius";
+    }
+}
+
+button.addEventListener('click', displayGetSign);
 
 
 //------------return age Function--------//
