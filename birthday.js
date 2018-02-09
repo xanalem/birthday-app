@@ -37,29 +37,29 @@ function displayGetSign() {
     var input = document.getElementById('inputNum').value;
     var result = getSign(input);
     if (result == "Capricorn") {
-        document.getElementById('prime').textContent = "Capricorn";
+        document.getElementById('prime').textContent = "Your sign is Capricorn";
     } else if (result == "Aquarius") {
-        document.getElementById('prime').textContent = "Aquarius";
+        document.getElementById('prime').textContent = "Your sign is Aquarius";
     } else if (result == "Pisces") {
-        document.getElementById('prime').textContent = "Pisces";
+        document.getElementById('prime').textContent = "Your sign is Pisces";
     } else if (result == "Aries") {
-        document.getElementById('prime').textContent = "Aries";
+        document.getElementById('prime').textContent = "Your sign is Aries";
     } else if (result == "Taurus") {
-        document.getElementById('prime').textContent = "Taurus";
+        document.getElementById('prime').textContent = "Your sign is Taurus";
     } else if (result == "Gemini") {
-        document.getElementById('prime').textContent = "Gemini";
+        document.getElementById('prime').textContent = "Your sign is Gemini";
     } else if (result == "Cancer") {
-        document.getElementById('prime').textContent = "Cancer";
+        document.getElementById('prime').textContent = "Your sign is Cancer";
     } else if (result == "Leo") {
-        document.getElementById('prime').textContent = "Leo";
+        document.getElementById('prime').textContent = "Your sign is Leo";
     } else if (result == "Virgo") {
-        document.getElementById('prime').textContent = "Virgo";
+        document.getElementById('prime').textContent = "Your sign is Virgo";
     } else if (result == "Libra") {
-        document.getElementById('prime').textContent = "Libra";
+        document.getElementById('prime').textContent = "Your sign is Libra";
     } else if (result == "Scorpio") {
-        document.getElementById('prime').textContent = "Scorpio";
+        document.getElementById('prime').textContent = "Your sign is Scorpio";
     } else if (result == "Sagittarius") {
-        document.getElementById('prime').textContent = "Sagittarius";
+        document.getElementById('prime').textContent = "Your sign is Sagittarius";
     }
 }
 
