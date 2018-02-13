@@ -1,8 +1,22 @@
-//------------Zodiac Sign Function--------//
-var button = document.getElementById('displaySign');
+var button = document.getElementById('enterBday');
+button.addEventListener("click", () => {
+    document.getElementById("result").textContent = checkDate();
+});
 
-function getSign(bday) {
-    var birth = new Date(bday);
+function checkDate() {
+    var input = document.getElementById("inputNum").value;
+    if (input.length !== 10) {
+        return "Sorry, but you did not enter a date in the correct format.";
+    } else if (input.substring(2, 3) !== '/' && input.substring(5, 6) !== '/') {
+        return "Sorry, but you did not enter a date in the correct format.";
+    } else {
+        return displayGetSign();
+    }
+}
+
+//------------Zodiac Sign Function--------//
+function getSign(input) {
+    var birth = new Date(input);
     var month = birth.getMonth() + 1;
     var day = birth.getDay();
 
@@ -37,40 +51,39 @@ function displayGetSign() {
     var input = document.getElementById('inputNum').value;
     var result = getSign(input);
     if (result == "Capricorn") {
-        document.getElementById('sign').textContent = "Your sign is Capricorn";
+        document.getElementById('result').textContent = "Your sign is Capricorn";
     } else if (result == "Aquarius") {
-        document.getElementById('sign').textContent = "Your sign is Aquarius";
+        document.getElementById('result').textContent = "Your sign is Aquarius";
     } else if (result == "Pisces") {
-        document.getElementById('sign').textContent = "Your sign is Pisces";
+        document.getElementById('result').textContent = "Your sign is Pisces";
     } else if (result == "Aries") {
-        document.getElementById('sign').textContent = "Your sign is Aries";
+        document.getElementById('result').textContent = "Your sign is Aries";
     } else if (result == "Taurus") {
-        document.getElementById('sign').textContent = "Your sign is Taurus";
+        document.getElementById('result').textContent = "Your sign is Taurus";
     } else if (result == "Gemini") {
-        document.getElementById('sign').textContent = "Your sign is Gemini";
+        document.getElementById('result').textContent = "Your sign is Gemini";
     } else if (result == "Cancer") {
-        document.getElementById('sign').textContent = "Your sign is Cancer";
+        document.getElementById('result').textContent = "Your sign is Cancer";
     } else if (result == "Leo") {
-        document.getElementById('sign').textContent = "Your sign is Leo";
+        document.getElementById('result').textContent = "Your sign is Leo";
     } else if (result == "Virgo") {
-        document.getElementById('sign').textContent = "Your sign is Virgo";
+        document.getElementById('result').textContent = "Your sign is Virgo";
     } else if (result == "Libra") {
-        document.getElementById('sign').textContent = "Your sign is Libra";
+        document.getElementById('result').textContent = "Your sign is Libra";
     } else if (result == "Scorpio") {
-        document.getElementById('sign').textContent = "Your sign is Scorpio";
+        document.getElementById('result').textContent = "Your sign is Scorpio";
     } else if (result == "Sagittarius") {
-        document.getElementById('sign').textContent = "Your sign is Sagittarius";
+        document.getElementById('result').textContent = "Your sign is Sagittarius";
     }
 }
 
-button.addEventListener('click', displayGetSign);
 
 
 //------------return age Function--------//
 
-function age() {
+function age(input) {
     var today = new Date();
-    var birth = new Date(this.bday);
+    var birth = new Date(input);
     var years = Math.floor((today.getTime() - birth.getTime()) / 31536000000);
     return years;
 }
