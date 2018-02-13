@@ -1,16 +1,3 @@
-var button = document.getElementById('displaySign');
-
-function errorAlert(bday) {
-    var input = document.getElementById('inputNum').value;
-    var birth = new Date(bday);
-    var right = document.getElementById('sign').value;
-    if (right != "bday") {
-        alert("Sorry, but you did not enter a date in the correct format.");
-    }
-}
-button.addEventListener('click', errorAlert);
-
-
 //------------Zodiac Sign Function--------//
 var button = document.getElementById('displaySign');
 
