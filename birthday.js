@@ -21,8 +21,6 @@ function getSign() {
     var month = birth.getMonth() + 1;
     var day = birth.getDay();
 
-    console.log(birth);
-
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
         return "Your sign is Capricorn";
     } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
@@ -49,37 +47,6 @@ function getSign() {
         return "Your sign is Sagittarius";
     }
 }
-
-function displayGetSign() {
-    var input = document.getElementById('inputNum').value;
-    var result = getSign(input);
-    if (result == "Capricorn") {
-        document.getElementById('result').textContent = "Your sign is Capricorn";
-    } else if (result == "Aquarius") {
-        document.getElementById('result').textContent = "Your sign is Aquarius";
-    } else if (result == "Pisces") {
-        document.getElementById('result').textContent = "Your sign is Pisces";
-    } else if (result == "Aries") {
-        document.getElementById('result').textContent = "Your sign is Aries";
-    } else if (result == "Taurus") {
-        document.getElementById('result').textContent = "Your sign is Taurus";
-    } else if (result == "Gemini") {
-        document.getElementById('result').textContent = "Your sign is Gemini";
-    } else if (result == "Cancer") {
-        document.getElementById('result').textContent = "Your sign is Cancer";
-    } else if (result == "Leo") {
-        document.getElementById('result').textContent = "Your sign is Leo";
-    } else if (result == "Virgo") {
-        document.getElementById('result').textContent = "Your sign is Virgo";
-    } else if (result == "Libra") {
-        document.getElementById('result').textContent = "Your sign is Libra";
-    } else if (result == "Scorpio") {
-        document.getElementById('result').textContent = "Your sign is Scorpio";
-    } else if (result == "Sagittarius") {
-        document.getElementById('result').textContent = "Your sign is Sagittarius";
-    }
-}
-
 
 
 //------------return age Function--------//
