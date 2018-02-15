@@ -10,15 +10,18 @@ function checkDate() {
     } else if (input.substring(2, 3) !== '/' && input.substring(5, 6) !== '/') {
         return "Sorry, but you did not enter a date in the correct format.";
     } else {
-        return displayGetSign();
+        return getSign();
     }
 }
 
 //------------Zodiac Sign Function--------//
-function getSign(input) {
-    var birth = new Date(input);
+function getSign() {
+    var inputb = document.getElementById("inputNum").value;
+    var birth = new Date(inputb);
     var month = birth.getMonth() + 1;
     var day = birth.getDay();
+
+    console.log(birth);
 
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
         return "Capricorn";
