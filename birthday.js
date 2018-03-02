@@ -10,7 +10,7 @@ function checkDate() {
     } else if (input.substring(2, 3) !== '/' && input.substring(5, 6) !== '/') {
         return "Sorry, but you did not enter a date in the correct format.";
     } else {
-        return getSign();
+        return handle();
     }
 }
 
@@ -22,28 +22,52 @@ function getSign() {
     var day = birth.getDay();
 
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
-        return "Your sign is Capricorn";
+        return "your sign is Capricorn";
     } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
-        return "Your sign is Aquarius";
+        return "your sign is Aquarius";
     } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-        return "Your sign is Pisces";
+        return "your sign is Pisces";
     } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-        return "Your sign is Aries";
+        return "your sign is Aries";
     } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-        return "Your sign is Taurus";
+        return "your sign is Taurus";
     } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-        return "Your sign is Gemini";
+        return "your sign is Gemini";
     } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
-        return "Your sign is Cancer";
+        return "your sign is Cancer";
     } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
-        return "Your sign is Leo";
+        return "your sign is Leo";
     } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
-        return "Your sign is Virgo";
+        return "your sign is Virgo";
     } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
-        return "Your sign is Libra";
+        return "your sign is Libra";
     } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-        return "Your sign is Scorpio";
+        return "your sign is Scorpio";
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-        return "Your sign is Sagittarius";
+        return "your sign is Sagittarius";
     }
+}
+
+
+function getAge(birthdate) {
+    var birth = new Date(birthdate);
+    var today = new Date();
+    var age = Math.floor((today - birth) / (1000 * 60 * 60 * 24 * 365));
+    return age;
+}
+
+function displayGetAge() {
+    var textBox = document.getElementById("inputNum");
+    var input = textBox.value;
+    var result = getAge(input);
+    return result;
+}
+
+
+function handle() {
+    var result1 = displayGetAge();
+    var result2 = getSign();
+
+  return "You are " + result1 + " years of age, " + result2 + ", and there are NaN days until your birthday!";
+
 }
