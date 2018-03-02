@@ -3,6 +3,8 @@ button.addEventListener("click", () => {
     document.getElementById("result").textContent = checkDate();
 });
 
+
+// checkDate
 function checkDate() {
     var input = document.getElementById("inputNum").value;
     if (input.length !== 10) {
@@ -14,7 +16,8 @@ function checkDate() {
     }
 }
 
-//------------Zodiac Sign Function--------//
+
+// getSign
 function getSign() {
     var inputb = document.getElementById("inputNum").value;
     var birth = new Date(inputb);
@@ -49,6 +52,7 @@ function getSign() {
 }
 
 
+//getAge
 function getAge(birthdate) {
     var birth = new Date(birthdate);
     var today = new Date();
@@ -64,10 +68,37 @@ function displayGetAge() {
 }
 
 
+//getCountdown
+function birthdayCountDown(date) {
+    var today = new Date();
+    var birthday = new Date(date);
+    var nextBday = new Date(date);
+    nextBday.setFullYear((today.getFullYear() - birthday.getFullYear()) + 2000);
+    var timeUntilBday = today - nextBday;
+    if (timeUntilBday > 0) {
+        nextBday.setFullYear((today.getFullYear() - birthday.getFullYear()) + 2001);
+    }
+    var bDays = (today.getTime() - nextBday.getTime()) / -86400000;
+
+    return Math.floor(bDays);
+}
+
+function displayCountDown() {
+    var input = document.getElementById('inputNum').value;
+    var result = birthdayCountDown(input);
+
+    return result;
+}
+
+bdaybutton.addEventListener('click', displayCountDown);
+
+
+// Handle
 function handle() {
     var result1 = displayGetAge();
     var result2 = getSign();
+    var result3 = displayCountDown();
 
-  return "You are " + result1 + " years of age, " + result2 + ", and there are NaN days until your birthday!";
+    return "You are " + result1 + " years of age, " + result2 + ", and there are " + result3 + " days until your birthday!";
 
 }
