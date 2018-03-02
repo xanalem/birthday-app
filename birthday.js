@@ -90,8 +90,6 @@ function displayCountDown() {
     return result;
 }
 
-bdaybutton.addEventListener('click', displayCountDown);
-
 
 // Handle
 function handle() {
