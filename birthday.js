@@ -92,6 +92,7 @@ function displayCountDown() {
 enterBday.addEventListener('click', displayCountDown);
 
 
+
 // Handle
 function handle() {
     var result1 = displayGetAge();
