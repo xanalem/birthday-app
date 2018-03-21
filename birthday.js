@@ -71,16 +71,15 @@ function displayGetAge() {
 //getCountdown
 function birthdayCountDown(date) {
     var today = new Date();
-    var birthday = new Date(date);
-    var nextBday = new Date(date);
-    nextBday.setFullYear((today.getFullYear() - birthday.getFullYear()) + 2000);
-    var timeUntilBday = today - nextBday;
-    if (timeUntilBday > 0) {
-        nextBday.setFullYear((today.getFullYear() - birthday.getFullYear()) + 2001);
+    var nextYear = today.getFullYear() + 1;
+    var birthday = document.getElementById("inputNum").value;
+    var birthdate = new Date(birthday);
+    var nextBday = new Date(birthdate.setFullYear(today.getFullYear()));
+    if ((today - nextBday) > 0) {
+        var nextBday = nextBday.setFullYear(today.getFullYear() + 1);
     }
-    var bDays = (today.getTime() - nextBday.getTime()) / -86400000;
-
-    return Math.floor(bDays);
+    var bDays = Math.ceil((nextBday - today) / 86400000);
+    return bDays;
 }
 
 function displayCountDown() {
@@ -89,6 +88,9 @@ function displayCountDown() {
 
     return result;
 }
+
+enterBday.addEventListener('click', displayCountDown);
+
 
 
 // Handle
